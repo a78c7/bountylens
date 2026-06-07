@@ -153,28 +153,34 @@ BountyLens open-source release confirms:
 
 ## 9. GitHub Release Plan
 
-Planned repository:
+Published repository:
 
 ```text
-a78c7/bountylens
+https://github.com/a78c7/bountylens
 ```
 
-Planned release:
+Published release:
 
 ```text
-v0.1.0
+https://github.com/a78c7/bountylens/releases/tag/v0.1.0
 ```
 
-Planned release asset:
+Uploaded release asset:
 
 ```text
-dist/bountylens-0.1.0.zip
+https://github.com/a78c7/bountylens/releases/download/v0.1.0/bountylens-0.1.0.zip
 ```
 
-Planned release notes source:
+Release notes source:
 
 ```text
 CHANGELOG.md
+```
+
+Commit:
+
+```text
+8524bef4ec5f7afba6f0b0dea57b62286df52d29
 ```
 
 ## 10. Manual Follow-Up
