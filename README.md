@@ -2,19 +2,32 @@
 
 A safety-first GitHub bounty triage toolkit for developers and AI coding agents.
 
-BountyLens 是一个安全优先的 GitHub bounty 候选筛选工具包，用来在让 Codex / AI agent 写 PR 之前，先判断这个 issue 是否值得做、是否有风险、是否像假 bounty。
+BountyLens 是一个安全优先的 GitHub bounty 候选筛选工具包，用来在让 Codex / AI agent 写 PR 之前，先判断 issue 是否值得做、是否有风险、是否像假 bounty。
 
-This project is open source.
+## What Is BountyLens
 
-BountyLens:
+BountyLens is an open-source toolkit for triaging public GitHub issue pages before a developer or AI coding agent starts implementation work.
 
-- Does not guarantee bounty earnings.
-- Does not claim rewards.
-- Does not handle KYC, payment, payout, withdrawal, wallet, tax, or banking flows.
-- Does not read cookies, keychain, GitHub tokens, passwords, private credentials, or password managers.
-- Does not auto-comment on issues or pull requests.
-- Does not auto-create pull requests.
-- Does not send issue text to a server.
+It includes:
+
+- A local Chrome extension for GitHub issue pages.
+- A Python CLI for URL, HTML, or text input.
+- A Codex-ready prompt pack for careful candidate review.
+- Example reports, screenshots, and a static landing page.
+
+BountyLens is not a bounty platform, payment tool, claim bot, or PR automation tool. It is a local decision aid before work starts.
+
+## Why Bounty Issues Are Hard To Trust
+
+GitHub issues that look like bounty opportunities can be ambiguous:
+
+- The issue may mention rewards without a clear platform or payment path.
+- Another contributor may already have a competing PR.
+- The requested work may require private environments, credentials, production access, or maintainer-only context.
+- The wording may look like a fake bounty or social engineering attempt.
+- The work may involve auth, payment, tokens, crypto, KYC, or database migrations that should not be handled by an agent without explicit review.
+
+BountyLens helps surface these signals before you ask Codex or another AI agent to write code.
 
 ## Features
 
@@ -89,6 +102,21 @@ The `prompts/` directory contains Codex-ready `/goal` templates:
 
 Each prompt includes safety boundaries against credential access, KYC/payment/withdrawal handling, automatic bounty claims, automatic comments, and broad PR automation.
 
+## Screenshots
+
+Screenshot assets live in `screenshots/`.
+
+Recommended viewing order:
+
+1. `screenshots/png/01-extension-panel.png`
+2. `screenshots/png/03-cli-report.png`
+3. `screenshots/png/06-workflow.png`
+4. `screenshots/png/04-prompt-pack.png`
+5. `screenshots/png/05-landing-page.png`
+6. `screenshots/png/02-popup.png`
+
+The HTML screenshot fixtures are also kept in `screenshots/` for repeatable local demo generation.
+
 ## Installation
 
 Clone the repository:
@@ -114,9 +142,40 @@ python3 cli/bountylens.py --html examples/sample-github-issue.html
 
 No third-party Python dependencies are required.
 
-## Usage
+## Quickstart
 
-Typical local workflow:
+Run the sample issue through the CLI:
+
+```bash
+python3 cli/bountylens.py --html examples/sample-github-issue.html --output examples/generated-report.md
+```
+
+Run tests:
+
+```bash
+python3 -m unittest discover -s tests
+```
+
+Build the release ZIP:
+
+```bash
+bash package-product.sh
+```
+
+## Example Workflow
+
+```text
+GitHub issue
+-> BountyLens triage
+-> Manual confirmation
+-> Codex candidate review
+-> Docker/testability check
+-> Draft PR only after approval
+-> Maintainer review
+-> Manual platform rules and bounty claim
+```
+
+Typical local flow:
 
 1. Open a GitHub issue page.
 2. Read the BountyLens browser panel.
@@ -132,30 +191,64 @@ BountyLens is designed to keep triage local, explicit, and low-risk.
 
 It does not:
 
-- Track users.
-- Use telemetry.
-- Call an external analysis server.
+- Guarantee bounty earnings.
+- Claim rewards.
+- Handle KYC, payment, payout, withdrawal, wallet, tax, or banking flows.
 - Read cookies.
+- Read keychain data.
 - Read GitHub tokens.
-- Read keychain, password manager, or credentials.
-- Handle KYC, payment, payout, withdrawal, wallet, or tax flows.
-- Automatically claim bounties.
-- Automatically comment on issues or PRs.
-- Automatically create PRs.
-- Recommend work on security, auth, payment, crypto, KYC, or destructive database migration issues.
+- Read passwords, private credentials, or password managers.
+- Comment on issues.
+- Create PRs automatically.
+- Send issue text to a server.
+- Track users or use telemetry.
 
-## Example Workflow
+Human confirmation is required before implementation, PR creation, bounty claiming, or any platform-specific process.
+
+## What BountyLens Does Not Do
+
+BountyLens does not make a final business, legal, or security decision. A `good_candidate_to_review` recommendation only means the issue looks worth human review under the current rules.
+
+BountyLens does not replace:
+
+- Maintainer confirmation.
+- Bounty platform rules.
+- Human code review.
+- Security review.
+- Payment, tax, or KYC processes.
+- AgentGate or other post-diff safety checks.
+
+## Relationship With AgentGate
+
+BountyLens helps before an AI agent starts work.
+
+AgentGate helps after an AI agent creates a diff.
+
+Use them together like this:
 
 ```text
 GitHub issue
 -> BountyLens triage
--> Manual confirmation
--> Codex candidate review
--> Docker/testability check
--> Draft PR
--> Maintainer review
--> Manual platform rules and bounty claim
+-> AI agent work
+-> AgentGate diff check
+-> human review
+-> PR
 ```
+
+AgentGate is available at:
+
+https://github.com/a78c7/agentgate
+
+## Optional Launch Assets
+
+This repository includes optional launch and packaging materials from the original product preparation pass:
+
+- `marketing/`
+- `publish-ready/`
+- `gumroad-listing.md`
+- `lemon-squeezy-listing.md`
+
+They are not the main open-source path and do not create any paid product by themselves. Do not log in to Gumroad or Lemon Squeezy, create a paid product, or handle payout/KYC/tax flows unless you do that manually outside this project.
 
 ## Development
 
@@ -174,42 +267,6 @@ publish-ready/  Optional manual publishing helper docs
 ```
 
 Do not add telemetry, credential access, cookie access, automatic bounty claiming, or KYC/payment/payout flows.
-
-## Tests
-
-Run:
-
-```bash
-python3 -m unittest discover -s tests
-```
-
-Generate the sample report:
-
-```bash
-python3 cli/bountylens.py --html examples/sample-github-issue.html --output examples/generated-report.md
-```
-
-Build the release ZIP:
-
-```bash
-bash package-product.sh
-```
-
-## Release
-
-Current release:
-
-```text
-v0.1.0
-```
-
-The packaged ZIP is generated at:
-
-```text
-dist/bountylens-0.1.0.zip
-```
-
-The ZIP is intended as a GitHub Release asset, not as a required committed binary.
 
 ## Contributing
 

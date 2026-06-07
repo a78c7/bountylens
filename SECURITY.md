@@ -4,6 +4,10 @@ BountyLens is designed as a local-first GitHub issue triage toolkit.
 
 ## Security Model
 
+The Chrome extension analyzes visible GitHub issue text locally.
+
+The CLI only processes the URL, HTML, or text that the user explicitly provides.
+
 BountyLens does not:
 
 - Use telemetry.
@@ -17,6 +21,8 @@ BountyLens does not:
 - Automatically claim bounties.
 - Automatically comment on issues or pull requests.
 - Automatically create pull requests.
+
+There is no auto bounty claiming path.
 
 ## Reporting Security Issues
 

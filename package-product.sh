@@ -17,7 +17,10 @@ required_files=(
   "CONTRIBUTING.md"
   "SECURITY.md"
   "CODE_OF_CONDUCT.md"
+  "OPEN_SOURCE_READY_REPORT.md"
+  "GITHUB_OPEN_SOURCE_REPORT.md"
   ".gitignore"
+  ".github/workflows/test.yml"
   ".github/ISSUE_TEMPLATE/bug_report.md"
   ".github/ISSUE_TEMPLATE/feature_request.md"
   ".github/ISSUE_TEMPLATE/safety_rule.md"
@@ -83,6 +86,8 @@ zip -r "$ZIP_PATH" \
   CONTRIBUTING.md \
   SECURITY.md \
   CODE_OF_CONDUCT.md \
+  OPEN_SOURCE_READY_REPORT.md \
+  GITHUB_OPEN_SOURCE_REPORT.md \
   .gitignore \
   .github \
   privacy-policy.md \

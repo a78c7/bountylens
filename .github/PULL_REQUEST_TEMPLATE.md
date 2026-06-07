@@ -4,23 +4,29 @@
 
 Describe the change.
 
+## Changes
+
+-
+
 ## Tests
 
 Paste test commands and results.
 
 ```bash
 python3 -m unittest discover -s tests
+python3 cli/bountylens.py --html examples/sample-github-issue.html --output examples/generated-report.md
 ```
 
-## Safety Boundary Review
+## Safety Impact
 
-- Does this affect extension permissions?
-- Does this add external network access?
-- Does this read cookies, tokens, passwords, keychain data, or credentials?
-- Does this automatically comment on issues or PRs?
-- Does this automatically create PRs?
+- Does this add telemetry?
+- Does this read cookies/tokens/passwords?
+- Does this read keychain data, password managers, or private credentials?
+- Does this auto-comment or auto-create PR?
 - Does this automatically claim rewards?
-- Does this handle KYC, payment, payout, withdrawal, wallet, tax, or banking flows?
+- Does this handle KYC/payment/withdrawal?
+- Does this change Chrome extension permissions?
+- Does this add external network access?
 
 ## Packaging
 
