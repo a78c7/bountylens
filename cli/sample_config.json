@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0",
+  "notes": [
+    "BountyLens uses local rules only.",
+    "No GitHub token, cookies, or login state is required.",
+    "Use this file as a starting point for documenting team review thresholds."
+  ],
+  "manual_confirmation_required_when": [
+    "external_environment_flags is not empty",
+    "direct_competing_pr_likely is present",
+    "possible_amounts is empty",
+    "platform_signal is Unknown"
+  ],
+  "avoid_when": [
+    "forbidden_flags is not empty",
+    "fake_or_weak_bounty_signal is present"
+  ]
+}

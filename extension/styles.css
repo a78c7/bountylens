@@ -1,0 +1,187 @@
+:root {
+  color-scheme: light dark;
+}
+
+#bountylens-panel {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 2147483647;
+  width: min(360px, calc(100vw - 32px));
+  color: #1f2328;
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  box-shadow: 0 16px 48px rgba(31, 35, 40, 0.18);
+  font: 13px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.bountylens-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 14px 10px;
+  border-bottom: 1px solid #d8dee4;
+  background: #f6f8fa;
+}
+
+.bountylens-title {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.bountylens-version,
+.bountylens-footnote,
+.bountylens-muted {
+  color: #57606a;
+}
+
+.bountylens-close {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  color: #24292f;
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.bountylens-grid {
+  display: grid;
+  grid-template-columns: minmax(110px, 1fr) minmax(120px, 1.25fr);
+  gap: 8px 12px;
+  padding: 14px;
+}
+
+.bountylens-grid span {
+  color: #57606a;
+}
+
+.bountylens-section {
+  padding: 0 14px 14px;
+}
+
+.bountylens-section-title {
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+#bountylens-panel ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.bountylens-footnote {
+  padding: 10px 14px 14px;
+  border-top: 1px solid #d8dee4;
+  font-size: 12px;
+}
+
+.bountylens-good {
+  color: #1a7f37;
+}
+
+.bountylens-warn {
+  color: #9a6700;
+}
+
+.bountylens-bad {
+  color: #cf222e;
+}
+
+.bountylens-popup {
+  width: 320px;
+  margin: 0;
+  color: #1f2328;
+  background: #ffffff;
+  font: 13px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.bountylens-popup-shell {
+  padding: 16px;
+}
+
+.bountylens-popup h1 {
+  margin: 0 0 2px;
+  font-size: 20px;
+}
+
+.bountylens-popup h2 {
+  margin: 16px 0 6px;
+  font-size: 14px;
+}
+
+.bountylens-popup ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.bountylens-popup button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 9px 10px;
+  border: 1px solid #1f883d;
+  border-radius: 6px;
+  color: #ffffff;
+  background: #1f883d;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.bountylens-popup-muted {
+  color: #57606a;
+}
+
+@media (prefers-color-scheme: dark) {
+  #bountylens-panel,
+  .bountylens-popup {
+    color: #e6edf3;
+    background: #0d1117;
+    border-color: #30363d;
+  }
+
+  .bountylens-header {
+    background: #161b22;
+    border-color: #30363d;
+  }
+
+  .bountylens-close {
+    color: #e6edf3;
+    background: #21262d;
+    border-color: #30363d;
+  }
+
+  .bountylens-version,
+  .bountylens-footnote,
+  .bountylens-muted,
+  .bountylens-popup-muted,
+  .bountylens-grid span {
+    color: #8b949e;
+  }
+
+  .bountylens-footnote {
+    border-color: #30363d;
+  }
+
+  .bountylens-good {
+    color: #3fb950;
+  }
+
+  .bountylens-warn {
+    color: #d29922;
+  }
+
+  .bountylens-bad {
+    color: #ff7b72;
+  }
+}
+
+@media (max-width: 700px) {
+  #bountylens-panel {
+    top: 12px;
+    right: 12px;
+  }
+}

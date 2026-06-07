@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BountyLens</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="bountylens-popup">
+    <main class="bountylens-popup-shell">
+      <h1>BountyLens</h1>
+      <p class="bountylens-popup-muted">Version 0.1.0</p>
+      <p>Local GitHub issue bounty signal and risk review for open source contributors.</p>
+      <section>
+        <h2>Safety principles</h2>
+        <ul>
+          <li>Visible page text only</li>
+          <li>No cookies or GitHub token access</li>
+          <li>No external API calls</li>
+          <li>No automatic comments, claims, or PRs</li>
+        </ul>
+      </section>
+      <button id="copyPrompt" type="button">Copy Codex review prompt</button>
+      <p id="copyStatus" class="bountylens-popup-muted" aria-live="polite"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

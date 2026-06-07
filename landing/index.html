@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BountyLens - GitHub bounty issue scanner</title>
+    <meta name="description" content="A local Chrome extension, Python CLI, and Codex prompt pack for screening GitHub bounty issues.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">
+        <span class="brand-mark">BL</span>
+        <span>BountyLens</span>
+      </a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#pricing">Pricing</a>
+        <a href="../README.md">Docs</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Local-first GitHub bounty triage</p>
+          <h1>BountyLens</h1>
+          <p class="hero-lede">Screen GitHub issue pages for bounty signals, fake-reward wording, competing PR risk, and high-risk task categories before handing the candidate to Codex.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://example.com/buy">Buy on Gumroad</a>
+            <a class="button secondary" href="https://example.com/buy">Buy on Lemon Squeezy</a>
+            <a class="button text" href="../README.md">View docs</a>
+          </div>
+        </div>
+        <div class="product-visual" aria-label="BountyLens interface preview">
+          <div class="browser-bar">
+            <span></span><span></span><span></span>
+            <strong>github.com/owner/repo/issues/123</strong>
+          </div>
+          <div class="issue-preview">
+            <div class="issue-title">Improve export formatting</div>
+            <div class="issue-line wide"></div>
+            <div class="issue-line"></div>
+            <div class="lens-panel">
+              <div class="panel-title">BountyLens</div>
+              <dl>
+                <div><dt>Bounty</dt><dd>yes</dd></div>
+                <div><dt>Amount</dt><dd>$50</dd></div>
+                <div><dt>Platform</dt><dd>IssueHunt</dd></div>
+                <div><dt>Risk</dt><dd>none</dd></div>
+              </dl>
+              <div class="recommendation">good candidate to review</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band problem">
+        <div class="section-copy">
+          <p class="eyebrow">Problem</p>
+          <h2>Funded issues are easy to misread.</h2>
+          <p>Reward text can be stale, fake, below platform minimums, already claimed, or tied to risky work that should not be delegated to an AI agent.</p>
+        </div>
+        <div class="split-list">
+          <p>Before coding, contributors need a fast way to ask: is this actually a bounty, is it safe, is it still open, and is it worth a deeper review?</p>
+        </div>
+      </section>
+
+      <section class="band solution">
+        <div class="section-copy">
+          <p class="eyebrow">Solution</p>
+          <h2>A local preflight check for bounty candidates.</h2>
+          <p>BountyLens combines a browser panel, CLI report, and Codex prompts so you can move from quick screen to manual confirmation to careful draft PR workflow.</p>
+        </div>
+      </section>
+
+      <section id="features" class="feature-grid">
+        <article>
+          <h3>Chrome extension</h3>
+          <p>Scans visible GitHub issue text and displays bounty signal, possible amount, platform, risk flags, and recommendation.</p>
+        </article>
+        <article>
+          <h3>Python CLI</h3>
+          <p>Analyze a public issue URL, local HTML file, or raw text. Output Markdown or JSON with no third-party dependencies.</p>
+        </article>
+        <article>
+          <h3>Prompt pack</h3>
+          <p>Use structured Codex goals for read-only review, candidate pilot, one draft PR attempt, and PR status checks.</p>
+        </article>
+        <article>
+          <h3>Safety filters</h3>
+          <p>Flags security, auth, payment, crypto, KYC, database migration, external environment, fake bounty, and competing PR signals.</p>
+        </article>
+      </section>
+
+      <section id="workflow" class="band workflow">
+        <p class="eyebrow">Safety-first workflow</p>
+        <h2>Screen first. Confirm manually. Then let Codex help.</h2>
+        <ol>
+          <li>Open a GitHub issue page.</li>
+          <li>Read the BountyLens panel.</li>
+          <li>Confirm bounty platform, payout rules, and competing PRs manually.</li>
+          <li>Run a read-only Codex candidate review.</li>
+          <li>Check Docker, tests, and local feasibility.</li>
+          <li>Create one draft PR only after explicit approval.</li>
+        </ol>
+      </section>
+
+      <section class="screenshots">
+        <p class="eyebrow">Screenshots</p>
+        <h2>Mock screenshots are included for manual Gumroad and Lemon Squeezy upload.</h2>
+        <p class="section-note">Open the files in `screenshots/` locally and capture 1280x720 or 1600x900 images. Use `screenshot-01-extension-panel.html` as the main product image.</p>
+        <div class="screenshot-row">
+          <div class="screenshot-box">screenshots/screenshot-01-extension-panel.html</div>
+          <div class="screenshot-box">screenshots/screenshot-03-cli-report.html</div>
+          <div class="screenshot-box">screenshots/screenshot-04-prompt-pack.html</div>
+        </div>
+      </section>
+
+      <section id="pricing" class="pricing">
+        <p class="eyebrow">Pricing</p>
+        <h2>Launch with a simple $19 personal package.</h2>
+        <p class="section-note">Start with one low-friction product. Add Pro and Team variants after buyer feedback.</p>
+        <div class="price-row">
+          <div class="price launch"><strong>Launch Personal</strong><span>$19</span><em>Extension, CLI, prompts, examples, and screenshots.</em></div>
+          <div class="price"><strong>Pro</strong><span>$49</span><em>Coming later after customer feedback.</em></div>
+          <div class="price"><strong>Team</strong><span>$149</span><em>Coming later for small internal teams.</em></div>
+        </div>
+        <p class="disclaimer">BountyLens helps evaluate bounty candidates. It does not guarantee earnings or automatically claim rewards.</p>
+      </section>
+
+      <section class="faq">
+        <p class="eyebrow">FAQ</p>
+        <h2>Common questions</h2>
+        <details open>
+          <summary>Does BountyLens guarantee bounty earnings?</summary>
+          <p>No. It is a screening workflow. Maintainers and bounty platforms decide outcomes.</p>
+        </details>
+        <details>
+          <summary>Does it send data to a server?</summary>
+          <p>No. The extension analyzes visible page text locally. The landing page loads no tracking scripts.</p>
+        </details>
+        <details>
+          <summary>Does it need a GitHub token?</summary>
+          <p>No. The CLI can read public URLs or user-provided local files and text.</p>
+        </details>
+      </section>
+
+      <section class="cta">
+        <h2>Start screening bounty issues before coding.</h2>
+        <div class="hero-actions">
+          <a class="button primary" href="https://example.com/buy">Buy on Gumroad</a>
+          <a class="button secondary" href="https://example.com/buy">Buy on Lemon Squeezy</a>
+          <a class="button text" href="../README.md">View docs</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

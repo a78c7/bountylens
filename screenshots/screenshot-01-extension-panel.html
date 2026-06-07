@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BountyLens Extension Panel Mock</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: #1f2328;
+        background: #f6f8fa;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      .frame {
+        width: 1280px;
+        height: 720px;
+        margin: 0 auto;
+        padding: 28px;
+        background: linear-gradient(180deg, #ffffff 0%, #eef2f6 100%);
+      }
+      .browser {
+        overflow: hidden;
+        height: 100%;
+        border: 1px solid #d0d7de;
+        border-radius: 10px;
+        background: #ffffff;
+        box-shadow: 0 24px 60px rgba(31, 35, 40, 0.14);
+      }
+      .bar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        height: 46px;
+        padding: 0 16px;
+        border-bottom: 1px solid #d8dee4;
+        background: #f6f8fa;
+        color: #57606a;
+        font-size: 13px;
+      }
+      .dot { width: 11px; height: 11px; border-radius: 999px; background: #d0d7de; }
+      .url {
+        margin-left: 10px;
+        padding: 7px 12px;
+        min-width: 480px;
+        border: 1px solid #d8dee4;
+        border-radius: 6px;
+        background: #ffffff;
+      }
+      .page {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 340px;
+        gap: 26px;
+        height: calc(100% - 46px);
+        padding: 34px;
+      }
+      .issue {
+        padding-right: 18px;
+      }
+      .repo {
+        color: #57606a;
+        font-size: 14px;
+      }
+      h1 {
+        margin: 12px 0 18px;
+        font-size: 30px;
+        letter-spacing: 0;
+      }
+      .meta {
+        display: inline-flex;
+        padding: 6px 10px;
+        border-radius: 999px;
+        color: #1a7f37;
+        background: #dafbe1;
+        font-weight: 700;
+        font-size: 13px;
+      }
+      .comment {
+        margin-top: 24px;
+        border: 1px solid #d8dee4;
+        border-radius: 8px;
+      }
+      .comment-head {
+        padding: 12px 16px;
+        border-bottom: 1px solid #d8dee4;
+        background: #f6f8fa;
+        font-weight: 700;
+      }
+      .comment-body {
+        padding: 18px 18px 22px;
+        color: #24292f;
+        font-size: 15px;
+        line-height: 1.65;
+      }
+      .bounty-line {
+        display: inline-block;
+        margin: 14px 0;
+        padding: 10px 12px;
+        border: 1px solid #aceebb;
+        border-radius: 8px;
+        color: #0f5323;
+        background: #dafbe1;
+        font-weight: 800;
+      }
+      .panel {
+        align-self: start;
+        padding: 18px;
+        border: 1px solid #d0d7de;
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 18px 44px rgba(31, 35, 40, 0.18);
+      }
+      .panel h2 {
+        margin: 0;
+        font-size: 20px;
+      }
+      .panel .sub {
+        margin: 3px 0 18px;
+        color: #57606a;
+        font-size: 13px;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 11px 0;
+        border-top: 1px solid #eef0f3;
+      }
+      .row span:first-child { color: #57606a; }
+      .row strong { text-align: right; }
+      .rec {
+        margin-top: 16px;
+        padding: 12px;
+        border-radius: 8px;
+        color: #6f4e00;
+        background: #fff8c5;
+        font-weight: 800;
+        text-align: center;
+      }
+      .flags {
+        margin-top: 16px;
+        padding: 12px;
+        border-radius: 8px;
+        background: #f6f8fa;
+      }
+      .flags p {
+        margin: 0 0 8px;
+        font-weight: 800;
+      }
+      .flags ul {
+        margin: 0;
+        padding-left: 18px;
+        color: #57606a;
+      }
+      .foot {
+        margin-top: 14px;
+        color: #57606a;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="browser">
+        <div class="bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <div class="url">github.com/example/project/issues/123</div>
+        </div>
+        <div class="page">
+          <main class="issue">
+            <div class="repo">example/project</div>
+            <h1>Improve Markdown export formatting</h1>
+            <span class="meta">Open issue</span>
+            <section class="comment">
+              <div class="comment-head">maintainer opened this issue</div>
+              <div class="comment-body">
+                <p>This issue is funded on IssueHunt. Submit a pull request to get a reward for a focused formatting fix.</p>
+                <div class="bounty-line">IssueHunt funded reward: $50</div>
+                <p>The task is small, local, and covered by tests. Please keep the change limited to Markdown export output.</p>
+              </div>
+            </section>
+          </main>
+          <aside class="panel">
+            <h2>BountyLens</h2>
+            <div class="sub">v0.1.0 local visible-text scan</div>
+            <div class="row"><span>Bounty signal</span><strong>yes</strong></div>
+            <div class="row"><span>Platform</span><strong>IssueHunt</strong></div>
+            <div class="row"><span>Amount</span><strong>$50</strong></div>
+            <div class="row"><span>Recommendation</span><strong>manual confirmation needed</strong></div>
+            <div class="rec">Confirm platform status before coding</div>
+            <div class="flags">
+              <p>Risk flags</p>
+              <ul>
+                <li>no direct competing PR found</li>
+                <li>no forbidden terms detected</li>
+              </ul>
+            </div>
+            <div class="foot">No API calls, cookies, tokens, bounty claims, comments, or PR actions.</div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

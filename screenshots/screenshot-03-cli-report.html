@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BountyLens CLI Report Mock</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: #e6edf3;
+        background: #0d1117;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      .frame {
+        width: 1280px;
+        height: 720px;
+        margin: 0 auto;
+        padding: 36px;
+        background: radial-gradient(circle at top right, #123d24, #0d1117 46%);
+      }
+      .terminal {
+        height: 100%;
+        overflow: hidden;
+        border: 1px solid #30363d;
+        border-radius: 10px;
+        background: rgba(13, 17, 23, 0.96);
+        box-shadow: 0 26px 70px rgba(0, 0, 0, 0.32);
+      }
+      .top {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        height: 42px;
+        padding: 0 14px;
+        border-bottom: 1px solid #30363d;
+        background: #161b22;
+      }
+      .dot { width: 11px; height: 11px; border-radius: 50%; background: #8b949e; }
+      .title { margin-left: 12px; color: #8b949e; font-size: 13px; }
+      pre {
+        margin: 0;
+        padding: 28px 34px;
+        font-size: 17px;
+        line-height: 1.55;
+        white-space: pre-wrap;
+      }
+      .cmd { color: #7ee787; }
+      .key { color: #79c0ff; }
+      .ok { color: #56d364; }
+      .muted { color: #8b949e; }
+      .warn { color: #d29922; }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="terminal">
+        <div class="top">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="title">bountylens CLI report</span>
+        </div>
+        <pre><span class="cmd">$ python3 cli/bountylens.py --html examples/sample-github-issue.html</span>
+
+# BountyLens Report
+
+- <span class="key">url:</span> https://github.com/example/project/issues/123
+- <span class="key">title:</span> Improve Markdown export formatting
+- <span class="key">bounty_signal:</span> <span class="ok">true</span>
+- <span class="key">platform_signal:</span> IssueHunt
+- <span class="key">possible_amounts:</span> $50
+- <span class="key">confidence:</span> high
+- <span class="key">recommendation:</span> <span class="ok">good_candidate_to_review</span>
+
+## Risk Flags
+
+- <span class="muted">none detected</span>
+
+## Suggested Next Step
+
+Run a read-only Codex candidate review before attempting implementation.
+        </pre>
+      </div>
+    </div>
+  </body>
+</html>
